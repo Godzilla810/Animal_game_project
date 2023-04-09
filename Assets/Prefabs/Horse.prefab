@@ -905,7 +905,7 @@ GameObject:
   - component: {fileID: -7061941359137233117}
   m_Layer: 0
   m_Name: Horse
-  m_TagString: Untagged
+  m_TagString: Animal
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -964,7 +964,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ef884e6bb815824ab582501822c8da3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 20
+  speed: 15
 --- !u!114 &2057681423
 MonoBehaviour:
   m_ObjectHideFlags: 0

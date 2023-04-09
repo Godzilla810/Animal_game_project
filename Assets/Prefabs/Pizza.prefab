@@ -15,10 +15,10 @@ GameObject:
   - component: {fileID: 1444455877360832118}
   - component: {fileID: 3452096807320980957}
   - component: {fileID: 8918880465349134579}
-  - component: {fileID: 1896589825414632226}
+  - component: {fileID: 836484175340705075}
   m_Layer: 0
   m_Name: Pizza
-  m_TagString: Untagged
+  m_TagString: Food
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,7 +142,7 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!114 &1896589825414632226
+--- !u!114 &836484175340705075
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}

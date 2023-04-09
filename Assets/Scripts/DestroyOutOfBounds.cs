@@ -21,15 +21,12 @@ public class DestroyOutOfBounds : MonoBehaviour
         }
         else if (transform.position.z < botBound){
             Destroy(gameObject);
-            Debug.Log("Game over!");
         }
         else if (transform.position.x > sideBound){
             Destroy(gameObject);
-            Debug.Log("Game over!");
         }
         else if (transform.position.x < -sideBound){
             Destroy(gameObject);
-            Debug.Log("Game over!");
         }
     }
 }
