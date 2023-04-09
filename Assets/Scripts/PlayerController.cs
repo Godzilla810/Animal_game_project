@@ -4,9 +4,11 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public float horizontalInput;
-    public float xRange = 10;
-    public float speed = 10.0f;
+    private float horizontalInput;
+    private float verticalInput;
+    private float xRange = 20;
+    private float zRange = 15;
+    private float speed = 15.0f;
     
     public GameObject projectilePrefab;
     // Start is called before the first frame update
@@ -18,6 +20,10 @@ public class PlayerController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        horizontalInput = Input.GetAxis("Horizontal");
+        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
+        verticalInput = Input.GetAxis("Vertical");
+        transform.Translate(Vector3.forward * verticalInput * Time.deltaTime * speed);
         // Keep the player in bounds
         if (transform.position.x < -xRange ){
             transform.position = new Vector3(-xRange ,transform.position.y ,transform.position.z);
@@ -25,9 +31,14 @@ public class PlayerController : MonoBehaviour
         if (transform.position.x > xRange ){
             transform.position = new Vector3(xRange ,transform.position.y ,transform.position.z);
         }
-        horizontalInput = Input.GetAxis("Horizontal");
-        transform.Translate(Vector3.right * horizontalInput * Time.deltaTime * speed);
-
+        if (transform.position.z < 0 ){
+            transform.position = new Vector3(transform.position.x ,transform.position.y ,0);
+        }
+        if (transform.position.z > zRange ){
+            transform.position = new Vector3(transform.position.x ,transform.position.y ,zRange);
+        }
+        
+        //Launch food
         if (Input.GetKeyDown(KeyCode.Space)){
             //Launch a projectile from the player
             Instantiate(projectilePrefab, transform.position, projectilePrefab.transform.rotation);
